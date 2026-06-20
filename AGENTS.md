@@ -11,6 +11,11 @@ blog/
   pt/   # Portuguese posts
   en/   # English posts
   es/   # Spanish posts
+
+projects/
+  pt/   # Portuguese projects
+  en/   # English projects
+  es/   # Spanish projects
 ```
 
 ## File Naming Convention
@@ -48,6 +53,26 @@ date: "yyyy-mm-dd"
 - `title` — post title
 - `description` — short description (used for SEO/meta)
 - `date` — publication date, must match the date in the filename
+
+### Projects Frontmatter
+
+Project files use a different frontmatter structure:
+
+```yaml
+---
+title: ""
+description: ""
+href: ""
+date: "yyyy-mm-dd"
+duration: "Mon YYYY - Mon YYYY"
+---
+```
+
+- `title` — project title
+- `description` — short description (used for SEO/meta)
+- `href` — link to the project repository or live site
+- `date` — project date (used for ordering)
+- `duration` — project duration in `{month/year start} - {month/year end}` format, with month names localized per language (use "Presente" for PT/ES, "Present" for EN for ongoing projects)
 
 ## File Format
 
