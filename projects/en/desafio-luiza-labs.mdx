@@ -9,4 +9,51 @@ tags: "#nodejs #cleancode #redis #fastify"
 highlight: true
 ---
 
-🚧 **Under construction** - This page is in development.
+In October 2024, I participated in the Luiza Labs selection process, the technology lab of Magazine Luiza. The technical challenge was to develop a ZIP code lookup service that allowed users to obtain their address from a postal code. In addition to the practical implementation, the challenge included a theoretical question about how the HTTP protocol works.
+
+## The Project
+
+The project was a complete back-end API with user authentication and ZIP code lookup. The chosen language was TypeScript with Node.js — a combination I'm proficient in that offers static typing along with the efficiency of Node.js's event loop for handling multiple simultaneous requests.
+
+## Architecture and Patterns
+
+The architecture was built on Clean Code and SOLID concepts, focusing on Dependency Injection and the Single Responsibility Principle. The main patterns used were:
+
+- **Use Case** — layer responsible for the core logic and business rules;
+- **Repository** — layer for interaction with the outside world, such as databases and external services;
+- **Factory** — pattern responsible for building functionalities, integrating use cases with repositories.
+
+This organization allowed each part to have a clear function, without internal layers being affected by external ones, and enabled the implementation of unit and end-to-end tests.
+
+## Performance Strategy
+
+Although the scope was small, I focused on organization and performance. Several measures were taken to optimize queries:
+
+- **Redis caching**: before looking up the address in the database, the cache is queried. If the information is there, the database lookup is avoided. Otherwise, the retrieved data is inserted into the cache for future queries;
+- **Query optimization**: instead of generating a new possible ZIP code and searching again each time, the application generates all possible ZIP codes at once and queries them with a `WHERE IN`, sorting to always return the closest match to the original.
+
+## Technologies Used
+
+For the implementation, I used:
+
+- **Node.js**: JavaScript runtime on the server;
+- **TypeScript**: superset that adds static typing to JavaScript;
+- **Fastify**: framework responsible for running the API and managing routes;
+- **Prisma**: ORM with direct TypeScript integration for database communication;
+- **Zod**: data validation package, used for both routes and environment variables;
+- **JWT**: authentication method between client and server;
+- **Swagger**: API documentation tool;
+- **Vitest**: automated testing framework;
+- **Redis**: in-memory database used as cache;
+- **PostgreSQL**: relational database for persistence;
+- **Docker**: container management platform.
+
+## Available Routes
+
+The API exposes the following routes:
+
+- `GET /api` — Health Check;
+- `GET /api-docs` — Swagger documentation;
+- `POST /api/register` — New user registration;
+- `POST /api/authenticate` — User authentication;
+- `GET /api/cep/:cep` — Address lookup by ZIP code (authenticated route).

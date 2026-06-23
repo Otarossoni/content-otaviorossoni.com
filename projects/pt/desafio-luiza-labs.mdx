@@ -9,4 +9,51 @@ tags: "#nodejs #cleancode #redis #fastify"
 highlight: true
 ---
 
-🚧 **Em construção** - Esta página está em desenvolvimento.
+Em outubro de 2024, participei do processo seletivo do Luiza Labs, o laboratório de tecnologia do Magazine Luiza. O desafio técnico consistia em desenvolver um serviço de consulta de CEP que permitisse ao usuário obter seu endereço a partir do código postal. Além da implementação prática, o desafio incluía uma questão teórica sobre o funcionamento do protocolo HTTP.
+
+## O Projeto
+
+O projeto era uma API back-end completa, com autenticação de usuários e consulta de CEPs. A linguagem escolhida foi TypeScript com Node.js — uma combinação que domino bem e que oferece tipagem estática aliada à eficiência do event loop do Node.js para lidar com múltiplas requisições simultâneas.
+
+## Arquitetura e Padrões
+
+A arquitetura foi construída sobre conceitos de Clean Code e SOLID, com foco em Injeção de Dependência e o Princípio da Responsabilidade Única. Os padrões principais utilizados foram:
+
+- **Use Case** — camada responsável pela lógica principal e regras de negócio;
+- **Repository** — camada de interação com o mundo exterior, como bancos de dados e serviços externos;
+- **Factory** — padrão responsável por construir as funcionalidades, integrando os use cases aos repositories.
+
+Essa organização permitiu que cada parte tivesse sua função clara, sem que as camadas internas sofressem interferência das externas, e viabilizou a implementação de testes unitários e end-to-end.
+
+## Estratégia de Performance
+
+Mesmo com um escopo pequeno, foquei em organização e performance. Algumas medidas foram tomadas para otimizar as consultas:
+
+- **Cache com Redis**: antes de buscar o endereço no banco de dados, uma consulta é feita no cache. Se as informações estiverem lá, a busca no banco é evitada. Caso contrário, os dados obtidos são inseridos no cache para consultas futuras;
+- **Otimização de consultas**: em vez de gerar um novo CEP possível e buscar novamente a cada tentativa, a aplicação gera todos os CEPs possíveis de uma vez e os busca com um `WHERE IN`, ordenando para retornar sempre o CEP mais próximo do original.
+
+## Tecnologias Utilizadas
+
+Para a implementação, utilizei:
+
+- **Node.js**: interpretador JavaScript no servidor;
+- **TypeScript**: superset que adiciona tipagem de dados ao JavaScript;
+- **Fastify**: framework responsável por subir a API e gerenciar as rotas;
+- **Prisma**: ORM com integração direta com TypeScript para comunicação com o banco de dados;
+- **Zod**: pacote de validação de dados, usado tanto nas rotas quanto nas variáveis de ambiente;
+- **JWT**: método de autenticação entre cliente e servidor;
+- **Swagger**: ferramenta de documentação da API;
+- **Vitest**: framework para execução de testes automatizados;
+- **Redis**: banco de dados em memória utilizado como cache;
+- **PostgreSQL**: banco de dados relacional para persistência;
+- **Docker**: plataforma para gerenciamento de containers.
+
+## Rotas Disponibilizadas
+
+A API expõe as seguintes rotas:
+
+- `GET /api` — Health Check;
+- `GET /api-docs` — Documentação Swagger;
+- `POST /api/register` — Criação de novo usuário;
+- `POST /api/authenticate` — Autenticação de usuário;
+- `GET /api/cep/:cep` — Consulta de endereço por CEP (rota autenticada).

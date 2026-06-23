@@ -9,4 +9,47 @@ tags: "#go #desktop"
 highlight: false
 ---
 
-🚧 **Under construction** - This page is in development.
+Long before I discovered the world of programming, I was already passionate about science fiction, especially stories involving time travel. Years later, when I started watching anime, I found what I still consider a true masterpiece of the genre: Steins;Gate.
+
+At the time, during one of my internet searches, I came across a project on GitHub — a platform I didn't even know what it was used for back then. The project was a replica of the Divergence Meter, one of the most iconic artifacts in the Steins;Gate story, built in Python.
+
+Years later, now with software development experience and a much better understanding of the technologies involved, I decided to create my own version. More than reproducing a project I admired, it was a way to bring together two passions that had stayed with me for a long time.
+
+![Divergence Meter in attractor mode](https://github.com/Otarossoni/divergence-meter/raw/main/.github/images/preview_attractor.png)
+
+## The Project
+
+The project is a desktop application that simulates the Divergence Meter from the Visual Novel, featuring animated worldlines, multiple attractors, a real-time clock mode, and hidden easter eggs. The goal was for the visual experience to be faithful to the series' aesthetics, while having its own interactivity.
+
+The application is keyboard-controlled, where each key corresponds to a different attractor:
+
+- `A` — Alpha attractor
+- `B` — Beta attractor
+- `G` — Gamma attractor
+- `D` — Delta attractor
+- `E` — Epsilon attractor
+- `O` — Omega attractor
+- `C` — Clock mode (HH:MM:SS real-time)
+
+## The Worldline Concept
+
+In Steins;Gate, a **worldline** represents a possible state of reality, where small numerical variations correspond to shifts between different timelines. The application translates this idea into a visual experience, using numerical divergence to illustrate transitions between realities, inspired by the behavior of the original divergence meter.
+
+## Features
+
+The main features implemented are:
+
+- Animated divergence meter display;
+- Six different attractors, each with its own characteristic timeline;
+- Clock mode with real-time updates;
+- Smooth digit animation during worldline transitions;
+- Hidden easter eggs for fans of the series;
+- Cross-platform desktop application (Linux and Windows).
+
+## Technologies Used
+
+For development, I used:
+
+- **Go**: language chosen for its performance and simplicity, ideal for desktop applications;
+- **Fyne**: GUI toolkit for Go, responsible for the application's interface;
+- **Image-based rendering**: the meter's digits are rendered from images, faithful to the original device's aesthetics.
