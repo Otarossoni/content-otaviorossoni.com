@@ -9,4 +9,28 @@ tags: "#go #cli"
 highlight: false
 ---
 
-🚧 **Under construction** - This page is in development.
+I've been reading manga for a long time, and for years I used third-party tools to download chapters and read offline. Eventually, I asked myself: why not build my own tool? That's how Mangadex Downloader was born — a simple and straightforward CLI to download chapters directly from the Mangadex platform.
+
+## The Project
+
+Mangadex Downloader is a command-line tool that allows downloading manga chapters with a single command. The manga can be identified in two ways: by the full Mangadex URL or just by the title's UUID.
+
+![Example of the download command usage](https://raw.githubusercontent.com/Otarossoni/mangadex-downloader/master/assets/download-cmd.png)
+
+## Features
+
+The CLI is entirely flag-based, from specifying the manga to setting the output file path. The main features are:
+
+- Download by manga URL or ID;
+- Chapter selection by range (e.g., `1-10;15;20-25`);
+- Support for multiple languages (en, pt-br, es-la, pl, cs, uk, it, vi, hu, and others);
+- Generation of compressed files in `.zip` or `.cbz`;
+- Custom output path for files.
+
+## Technologies Used
+
+For development, I used:
+
+- **Go**: language chosen for its simplicity and efficiency in command-line tools;
+- **Cobra**: Go library for building CLIs, responsible for flag and command parsing;
+- **GoReleaser**: tool used for release automation and binary distribution.
