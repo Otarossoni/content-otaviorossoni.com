@@ -9,4 +9,47 @@ tags: "#go #desktop"
 highlight: false
 ---
 
-🚧 **En construcción** - Esta página está en desarrollo.
+Desde mucho antes de conocer el mundo de la programación, ya era amante de la ciencia ficción, especialmente de historias que involucraban viajes en el tiempo. Años después, cuando empecé a ver anime, encontré el que hasta hoy considero una verdadera obra maestra del género: Steins;Gate.
+
+En aquella época, durante una de mis búsquedas por internet, encontré un proyecto en GitHub —plataforma que ni siquiera sabía para qué servía en ese momento. El proyecto era una réplica del Divergence Meter, uno de los artefactos más icónicos de la historia de Steins;Gate, desarrollado en Python.
+
+Años después, ya con experiencia en desarrollo de software y entendiendo mucho mejor las tecnologías involucradas, decidí crear mi propia versión. Más que reproducir un proyecto que admiraba, era una forma de unir dos pasiones que me acompañaron durante mucho tiempo.
+
+![Divergence Meter en modo atrator](https://github.com/Otarossoni/divergence-meter/raw/main/.github/images/preview_attractor.png)
+
+## El Proyecto
+
+El proyecto es una aplicación de escritorio que simula el Divergence Meter de la Visual Novel, con líneas temporales animadas, múltiples atractores, un modo reloj en tiempo real y easter eggs ocultos. La idea era que la experiencia visual fuera fiel a la estética de la serie, pero con interactividad propia.
+
+La aplicación se controla por teclado, donde cada tecla corresponde a un atractor diferente:
+
+- `A` — Atractor Alpha
+- `B` — Atractor Beta
+- `G` — Atractor Gamma
+- `D` — Atractor Delta
+- `E` — Atractor Epsilon
+- `O` — Atractor Omega
+- `C` — Modo reloj (HH:MM:SS en tiempo real)
+
+## El Concepto de Worldline
+
+En Steins;Gate, una **worldline** representa un estado posible de la realidad, donde pequeñas variaciones numéricas corresponden a transiciones entre diferentes líneas temporales. La aplicación traduce esta idea en una experiencia visual, usando la divergencia numérica para ilustrar transiciones entre realidades, inspirada en el comportamiento del medidor de divergencia original.
+
+## Funcionalidades
+
+Las principales funcionalidades implementadas son:
+
+- Display animado del medidor de divergencia;
+- Seis atractores diferentes, cada uno con su línea temporal característica;
+- Modo reloj con actualización en tiempo real;
+- Animación suave de los dígitos durante transiciones de líneas temporales;
+- Easter eggs ocultos para los fans de la serie;
+- Aplicación de escritorio cross-platform (Linux y Windows).
+
+## Tecnologías Utilizadas
+
+Para el desarrollo, utilicé:
+
+- **Go**: lenguaje elegido por su rendimiento y simplicidad, ideal para aplicaciones de escritorio;
+- **Fyne**: toolkit gráfico para Go, responsable de la interfaz de la aplicación;
+- **Renderización basada en imágenes**: los dígitos del medidor se renderizan a partir de imágenes, fieles a la estética del dispositivo original.
