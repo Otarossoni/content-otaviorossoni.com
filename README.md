@@ -32,6 +32,7 @@ Every post requires:
 title: ""
 description: ""
 date: "yyyy-mm-dd"
+tags: "#tag1 #tag2"
 ---
 ```
 
@@ -46,6 +47,7 @@ description: ""
 href: ""
 date: "yyyy-mm-dd"
 duration: "Mon YYYY - Mon YYYY"
+tags: "#tag1 #tag2 #tag3"
 ---
 ```
 
@@ -54,3 +56,4 @@ duration: "Mon YYYY - Mon YYYY"
 - `href` — link to the project repository or live site
 - `date` — project date (used for ordering)
 - `duration` — project duration with localized month names (use "Presente" for PT/ES, "Present" for EN for ongoing projects)
+- `tags` — space-separated list of technology/skill tags (e.g., `"#react #typescript #nodejs"`). The frontend splits by whitespace to render individual tags.

@@ -47,12 +47,14 @@ Every post **must** begin with this YAML frontmatter:
 title: ""
 description: ""
 date: "yyyy-mm-dd"
+tags: "#tag1 #tag2"
 ---
 ```
 
 - `title` — post title
 - `description` — short description (used for SEO/meta)
 - `date` — publication date, must match the date in the filename
+- `tags` — space-separated list of topic tags (e.g., `"#misc #productivity"`). The frontend splits by whitespace to render individual tags.
 
 ### Projects Frontmatter
 
