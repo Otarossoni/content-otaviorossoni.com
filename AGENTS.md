@@ -83,3 +83,7 @@ highlight: true/false
 ## File Format
 
 Posts use the `.mdx` extension (MDX format).
+
+## Commit Policy
+
+**Never commit changes unless explicitly asked by the user.** No commits, amends, pushes, or PRs without a direct request.

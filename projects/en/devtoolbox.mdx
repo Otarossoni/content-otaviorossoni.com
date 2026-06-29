@@ -1,0 +1,58 @@
+---
+title: "DevToolbox"
+description: "Modern web toolkit for developers featuring generators, validators, formatters, and converters."
+href: "https://devtoolbox.otaviorossoni.com"
+github: "https://github.com/Otarossoni/devtoolbox"
+date: "2026-06-29"
+duration: "Jun 2026 - Present"
+tags: "#nextjs #react #typescript #tailwindcss"
+highlight: true
+---
+
+I've always relied on online tools during development: generating UUIDs, validating JSON, converting timestamps, formatting Markdown. The problem was I never fully trusted these tools: many have intrusive ads, trackers, or worse, send your data to some unknown server. DevToolbox was born out of that frustration.
+
+## The Project
+
+DevToolbox is a web toolkit for developers that brings together generators, validators, formatters, and converters in one place. The central premise is simple: **100% client-side**: no data leaves your browser. Everything is processed locally using native browser APIs (Canvas, Crypto, DOMParser).
+
+The project covers 12 tool categories, totaling over 30 utilities:
+
+- **Base64**: Text, image, PDF, and file encoding/decoding, with a validator;
+- **Color**: Converter between formats (HEX, RGB, HSL, CSS), color harmonies, and WCAG contrast checker;
+- **Image**: Format converter, resizer, and color extractor;
+- **JSON**: Formatter with syntax highlighting, converters (CSV, YAML, XML, Query String), diff, and path extractor;
+- **Markdown**: Editor with live preview and table generator;
+- **Number**: Base converter, bitwise calculator, and interactive ASCII table;
+- **QR Code**: Customizable generator with PNG export;
+- **Security**: Hashes (MD5, SHA) with HMAC, secure passwords, and JWT decoder;
+- **Text**: Case switcher, counter, diff, HTML entities, Lorem Ipsum, replacer, and slug generator;
+- **Time**: Timestamp converter, date calculator, and cron parser;
+- **URL**: Encoder/decoder and parser with parameter breakdown;
+- **UUID**: Generator (6 versions + bulk), validator, and structure inspector.
+
+## Features
+
+- 100% local processing: no data sent to external servers;
+- VS Code-style syntax highlighting in JSON tools;
+- Live real-time preview in all conversion tools;
+- Unicode and emoji support across all text tools;
+- Customizable QR code generation with colors, margin, and error correction;
+- Bulk UUID generation (up to 1,000) with TXT or JSON export;
+- JSON converter with nested paths and query strings;
+- Color-coded visual diff for JSON and text.
+
+## Design
+
+The project adopts a single dark theme, with a palette based on shades of gray and purple as the accent color (`#8A2BE2`). The visual hierarchy follows three background levels: `#000000` (body) > `#0a0a0a` (cards) > `#171717` (hover): with subtle borders in `#262626`. Typography uses the Geist family (Sans + Mono) from Google Fonts, ensuring readability for both prose and code.
+
+## Technologies Used
+
+- **Next.js 16**: React framework with App Router and Turbopack, responsible for performance;
+- **TypeScript**: main project language, ensuring static typing across all tools;
+- **Tailwind CSS 4**: utility-first CSS framework for a clean and consistent UI;
+- **Phosphor Icons**: icon family used throughout the interface;
+- **Geist**: Google Fonts typeface used in the project;
+- **qrcode**: customizable QR code generation;
+- **cronstrue**: cron expression parsing into readable descriptions;
+- **jspdf**: PDF export in the image converter;
+- **Playwright**: end-to-end tests to ensure tool stability.

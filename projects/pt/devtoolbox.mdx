@@ -1,0 +1,57 @@
+---
+title: "DevToolbox"
+description: "Caixa de ferramentas moderna para desenvolvedores com geradores, validadores, formatadores e conversores."
+href: "https://devtoolbox.otaviorossoni.com"
+github: "https://github.com/Otarossoni/devtoolbox"
+date: "2026-06-29"
+duration: "Jun 2026 - Presente"
+tags: "#nextjs #react #typescript #tailwindcss"
+highlight: true
+---
+
+Sempre tive o hábito de recorrer a ferramentas online durante o desenvolvimento: gerar UUIDs, validar JSON, converter timestamps, formatar Markdown. O problema é que eu nunca confiava completamente nessas ferramentas: muitas têm anúncios intrusivos, rastreadores ou, pior, enviam seus dados para algum servidor desconhecido. Foi dessa frustração que nasceu o DevToolbox.
+
+## O Projeto
+
+O DevToolbox é um toolkit web para desenvolvedores que reúne geradores, validadores, formatadores e conversores em um único lugar. A premissa central é simples: **100% client-side**: nenhum dado sai do seu navegador. Tudo é processado localmente com APIs nativas do browser (Canvas, Crypto, DOMParser).
+
+O projeto cobre 12 categorias de ferramentas, totalizando mais de 30 utilitários:
+
+- **Base64**: Codificação/decodificação de texto, imagem, PDF e arquivos, com validador;
+- **Cor**: Conversor entre formatos (HEX, RGB, HSL, CSS), paletas harmônicas e verificador de contraste WCAG;
+- **Imagem**: Conversor entre formatos, redimensionador e extrator de cores;
+- **JSON**: Formatador com syntax highlighting, conversores (CSV, YAML, XML, Query String), diff e path extractor;
+- **Markdown**: Editor com preview ao vivo e gerador de tabelas;
+- **Número**: Conversor de bases, calculadora bitwise e tabela ASCII interativa;
+- **QR Code**: Gerador customizável com exportação em PNG;
+- **Segurança**: Hashes (MD5, SHA) com HMAC, senhas seguras e decoder JWT;
+- **Texto**: Case switcher, contador, diff, HTML entities, Lorem Ipsum, replacer e slug generator;
+- **Tempo**: Conversor de timestamps, calculadora de datas e parser de cron;
+- **URL**: Encoder/decoder e parser com decomposição de parâmetros;
+- **UUID**: Gerador (6 versões + bulk), validador e inspector de estrutura.
+
+## Funcionalidades
+
+- Processamento 100% local: nenhum dado enviado a servidores externos;
+- Syntax highlighting estilo VS Code nas ferramentas de JSON;
+- Preview ao vivo em tempo real em todas as ferramentas de conversão;
+- Geração de QR codes customizáveis com cores, margem e correção de erro;
+- Geração de UUIDs em lote (até 1.000) com exportação em TXT ou JSON;
+- Conversor de JSON com caminhos aninhados e query strings;
+- Diff visual colorido para JSON e texto.
+
+## Design
+
+O projeto adota um tema dark único, com uma paleta baseada em tons de cinza e roxo como cor de destaque (`#8A2BE2`). A hierarquia visual segue três níveis de fundo: `#000000` (body) > `#0a0a0a` (cards) > `#171717` (hover): com bordas sutis em `#262626`. A tipografia usa a família Geist (Sans + Mono) do Google Fonts, garantindo legibilidade tanto para texto corrido quanto para código.
+
+## Tecnologias Utilizadas
+
+- **Next.js 16**: framework React com App Router e Turbopack, responsável pela performance;
+- **TypeScript**: linguagem principal, garantindo tipagem estática em todas as ferramentas;
+- **Tailwind CSS 4**: framework de estilização utilitária para uma interface limpa e consistente;
+- **Phosphor Icons**: família de ícones utilizada em toda a interface;
+- **Geist**: fonte do Google Fonts utilizada no projeto;
+- **qrcode**: geração de QR codes customizáveis;
+- **cronstrue**: parsing de expressões cron para descrições legíveis;
+- **jspdf**: exportação de PDF no conversor de imagens;
+- **Playwright**: testes end-to-end para garantir estabilidade das ferramentas.
